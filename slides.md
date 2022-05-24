@@ -44,16 +44,25 @@ drawings:
 
 </v-clicks>
 
-<div class="flex justify-around">
+<div class="flex justify-around w-2/3 mx-auto">
 
 <v-clicks>
 
-<img src="https://assets.fireside.fm/file/fireside-images/podcasts/images/4/4b532b8f-dc99-4b48-90f1-023bd6c0cd90/cover.jpg?v=1" class="w-32" />
-<img src="https://pbcdn1.podbean.com/imglogo/image-logo/984467/modern_web_9bpnd.jpg" class="w-32">
+<div class="flex-1 flex justify-center"><img src="/elm.png" class="w-14" /></div>
+
+<div class="flex-1 flex justify-center"><img src="/haskell.webp" class="w-14" /></div>
+
+<div class="flex-1 flex justify-center"><img src="/roc-logo.png" class="w-14" /></div>
 
 </v-clicks>
 
 </div>
+
+<v-clicks>
+
+https://www.noredink.com/jobs
+
+</v-clicks>
 
 </div>
 
@@ -70,6 +79,12 @@ drawings:
     <div class="w-16" /> lindsaykwardell.com
   </div>
 </div>
+
+---
+layout: center
+---
+
+# What is Functional Programming?
 
 ---
 
@@ -109,6 +124,8 @@ drawings:
 </div>
 <div class="flex-1">
 
+## What is Vue?
+
 Vue is a JavaScript framework for building user interfaces.
 
 It builds on top of standard HTML, CSS and JavaScript, and provides a declarative and component-based programming model that helps you efficiently develop user interfaces, be it simple or complex.
@@ -122,7 +139,7 @@ It builds on top of standard HTML, CSS and JavaScript, and provides a declarativ
 <div class="flex gap-4">
 <div class="flex-1">
 
-What is Functional Programming?
+## What is Functional Programming?
 
 Building an application by composing functions together.
 
@@ -160,7 +177,7 @@ Organize code around data structures and functions
 <div class="flex gap-4">
 <div class="flex-1">
 
-What is Functional Programming?
+## What is Functional Programming?
 
 Building an application by composing functions together.
 
@@ -380,7 +397,31 @@ const totalFailedTests = computed(
 
 # Same inputs = same outputs
 
-<div class="flex justify-center">
+<v-clicks>
+
+```ts
+const props = defineProps<{
+  isIdle: boolean;
+  isRunning: boolean;
+  isFinished: boolean;
+  tests: Test[];
+}>();
+```
+
+```ts
+const props = defineProps<{
+  testRunnerStatus: string;
+  tests: Test[];
+}>();
+```
+
+</v-clicks>
+
+---
+
+# Same inputs = same outputs
+
+<div class="flex justify-center items-center h-96">
 
 ```mermaid
 flowchart LR
@@ -394,12 +435,12 @@ flowchart LR
 
 # Same inputs = same outputs
 
-<div class="flex justify-center">
+<div class="flex justify-center items-center h-96">
 
 ```mermaid
 flowchart LR
-    Props --> Function
-    Function{Function} --> Output
+    Input --> Component{Component}
+    Component --> Output
 ```
 
 </div>
@@ -408,13 +449,12 @@ flowchart LR
 
 # Same inputs = same outputs
 
-<div class="flex justify-center">
+<div class="flex justify-center items-center h-96">
 
 ```mermaid
 flowchart LR
-    Props --> Function
-    state[Global State] --> Function
-    Function{Function} --> Output
+    Props --> Component
+    Component{Component} --> Output
 ```
 
 </div>
@@ -423,14 +463,13 @@ flowchart LR
 
 # Same inputs = same outputs
 
-<div class="flex justify-center">
+<div class="flex justify-center items-center h-96">
 
 ```mermaid
 flowchart LR
-    Props --> Function
-    state[Global State] --> Function
-    api[External API] --> Function
-    Function{Function} --> Output
+    Props --> Component
+    state[Global State] --> Component
+    Component{Component} --> Output
 ```
 
 </div>
@@ -439,15 +478,14 @@ flowchart LR
 
 # Same inputs = same outputs
 
-<div class="flex justify-center">
+<div class="flex justify-center items-center h-96">
 
 ```mermaid
 flowchart LR
-    Props --> Function
-    state[Global State] --> Function
-    api[External API] --> Function
-    bus[Event Bus] --> Function
-    Function{Function} --> Output
+    Props --> Component
+    state[Global State] --> Component
+    api[External API] --> Component
+    Component{Component} --> Output
 ```
 
 </div>
@@ -456,16 +494,15 @@ flowchart LR
 
 # Same inputs = same outputs
 
-<div class="flex justify-center">
+<div class="flex justify-center items-center h-96">
 
 ```mermaid
 flowchart LR
-    Props --> Function
-    state[Global State] --> Function
-    api[External API] --> Function
-    bus[Event Bus] --> Function
-    provide[Provide/Inject] --> Function
-    Function{Function} --> Output
+    Props --> Component
+    state[Global State] --> Component
+    api[External API] --> Component
+    bus[Event Bus] --> Component
+    Component{Component} --> Output
 ```
 
 </div>
@@ -474,16 +511,16 @@ flowchart LR
 
 # Same inputs = same outputs
 
-<div class="flex justify-center">
+<div class="flex justify-center items-center h-96">
 
 ```mermaid
 flowchart LR
-    Props --> Function
-    state[Global State] --> Function
-    api[External API] --> Function
-    bus[Event Bus] --> Function
-    provide[Provide/Inject] --> Function
-    Function{Function} --> HTML
+    Props --> Component
+    state[Global State] --> Component
+    api[External API] --> Component
+    bus[Event Bus] --> Component
+    provide[Provide/Inject] --> Component
+    Component{Component} --> Output
 ```
 
 </div>
@@ -492,17 +529,16 @@ flowchart LR
 
 # Same inputs = same outputs
 
-<div class="flex justify-center">
+<div class="flex justify-center items-center h-96">
 
 ```mermaid
 flowchart LR
-    Props --> Function
-    state[Global State] --> Function
-    api[External API] --> Function
-    bus[Event Bus] --> Function
-    provide[Provide/Inject] --> Function
-    Function{Function} --> HTML
-    Function{Function} --> api2[API Requests]
+    Props --> Component
+    state[Global State] --> Component
+    api[External API] --> Component
+    bus[Event Bus] --> Component
+    provide[Provide/Inject] --> Component
+    Component{Component} --> HTML
 ```
 
 </div>
@@ -511,18 +547,17 @@ flowchart LR
 
 # Same inputs = same outputs
 
-<div class="flex justify-center">
+<div class="flex justify-center items-center h-96">
 
 ```mermaid
 flowchart LR
-    Props --> Function
-    state[Global State] --> Function
-    api[External API] --> Function
-    bus[Event Bus] --> Function
-    provide[Provide/Inject] --> Function
-    Function{Function} --> HTML
-    Function{Function} --> api2[API Requests]
-    Function{Function} --> emit[Events]
+    Props --> Component
+    state[Global State] --> Component
+    api[External API] --> Component
+    bus[Event Bus] --> Component
+    provide[Provide/Inject] --> Component
+    Component{Component} --> HTML
+    Component{Component} --> api2[API Requests]
 ```
 
 </div>
@@ -531,19 +566,54 @@ flowchart LR
 
 # Same inputs = same outputs
 
-<div class="flex justify-center">
+<div class="flex justify-center items-center h-96">
 
 ```mermaid
 flowchart LR
-    Props --> Function
-    state[Global State] --> Function
-    api[External API] --> Function
-    bus[Event Bus] --> Function
-    provide[Provide/Inject] --> Function
-    Function{Function} --> HTML
-    Function{Function} --> api2[API Requests]
-    Function{Function} --> emit[Events]
-    Function{Function} --> mutation[Data Mutation]
+    Props --> Component
+    state[Global State] --> Component
+    api[External API] --> Component
+    bus[Event Bus] --> Component
+    provide[Provide/Inject] --> Component
+    Component{Component} --> HTML
+    Component{Component} --> api2[API Requests]
+    Component{Component} --> emit[Events]
+```
+
+</div>
+
+---
+
+# Same inputs = same outputs
+
+<div class="flex justify-center items-center h-96">
+
+```mermaid
+flowchart LR
+    Props --> Component
+    state[Global State] --> Component
+    api[External API] --> Component
+    bus[Event Bus] --> Component
+    provide[Provide/Inject] --> Component
+    Component{Component} --> HTML
+    Component{Component} --> api2[API Requests]
+    Component{Component} --> emit[Events]
+    Component{Component} --> mutation[Data Mutation]
+```
+
+</div>
+
+---
+
+# Same inputs = same outputs
+
+<div class="flex justify-center items-center h-96">
+
+```mermaid
+flowchart LR
+    Props --> Component
+    Component{Component} --> HTML
+    Component{Component} --> emit[Events]
 ```
 
 </div>
@@ -892,10 +962,136 @@ function getTests(state) {
 
 # Reduce Mutation
 
-<v-clicks>
+<div></div>
 
-![](/description-error.png)
+<v-clicks>
 
 ![](/push-error.png)
 
+![](/description-error.png)
+
 </v-clicks>
+
+---
+layout: center
+---
+
+# Functional Vue?
+
+<div class="flex justify-center">
+
+<v-clicks>
+
+## Yes!
+
+</v-clicks>
+
+</div>
+
+---
+
+# Functional Vue
+
+<v-clicks>
+
+## Same inputs = same outputs
+
+- More testable components
+- Strong, defined internal APIs
+
+## Reduce Side Effects
+
+- Reduce scope of components
+- Centralize API calls
+- Isolate dangerous interactions
+
+## Reduce Mutation
+
+- More predictable applications
+- Simplified state management
+
+</v-clicks>
+
+---
+layout: center
+class: text-center
+---
+
+# elm-vue-bridge
+
+<img src="https://elm-vue-bridge.lindsaykwardell.com/images/elm-vue-bridge.webp" class="w-34 py-6 m-auto" />
+
+## Render Elm modules in a Vue app
+
+https://elm-vue-bridge.lindsaykwardell.com/
+
+---
+
+```vue
+<script setup>
+import elmBridge from 'elm-vue-bridge';
+import { Elm } from './Main.elm';
+
+const Counter = elmBridge(Elm, {
+  name: "Counter",
+  emit: ["sendCount"],
+  props: {
+    initialValue: {
+      type: Number,
+      default: 2,
+    },
+  },
+});
+
+const value = ref(3);
+
+function sendCount(val: number) {
+  value.value = val;
+  console.log(val);
+}
+</script>
+
+<template>
+  <Counter :initialValue="value" @sendCount="sendCount" />
+</template>
+```
+
+---
+
+<div grid="~ cols-3 gap-2 ">
+
+![](/lindsay.jpg)
+
+<div class="col-span-2 text-center flex flex-col justify-between">
+
+# Lindsay Wardell
+
+<div>
+
+#### Software Engineer
+
+<img class="m-auto" src="/noredink.png" />
+
+</div>
+
+<div class="flex justify-around w-2/3 mx-auto">
+
+</div>
+
+https://www.noredink.com/jobs
+
+</div>
+
+</div>
+
+<div class="abs-bl m-6 text-xl !border-none text-right">
+  <div class="flex">
+    <carbon-logo-twitter class="w-16" />  <span>lindsaykwardell</span>
+  </div>
+  <div class="flex">
+    <carbon-logo-github class="w-16" /> <span> lindsaykwardell</span>
+  </div>
+  <div class="flex underline">
+    <div class="w-16" /> lindsaykwardell.com
+  </div>
+</div>
