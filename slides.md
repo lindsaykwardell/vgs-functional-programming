@@ -18,8 +18,8 @@ drawings:
 ## Applying Functional Principles
 
 <div class="py-20 relative w-25 h-25 m-auto">
-  <img src="https://d33wubrfki0l68.cloudfront.net/555257b8c5e7ecf34ce4f9b952eeaf006adfa339/d9011/vue.png" class="absolute w-16 h-16 top-[61%] left-[18%]" />
-  <div class="relative z-10 text-5xl italic w-25 h-25 rounded-full border border-white border-2 m-auto flex items-center justify-center text-green-700">λ</div>
+  <img src="https://d33wubrfki0l68.cloudfront.net/555257b8c5e7ecf34ce4f9b952eeaf006adfa339/d9011/vue.png" class="absolute w-16 h-16 top-[61%] left-[18%] opacity-30" />
+  <div class="relative z-10 text-5xl italic w-25 h-25 rounded-full border border-white border-2 m-auto flex items-center justify-center text-green-600 font-bold">λ</div>
 </div>
 
 ---
